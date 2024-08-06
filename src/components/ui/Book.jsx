@@ -3,7 +3,7 @@ import FontAwesomeStar from "./FontAwesomeStar";
 import FontAwesomeHalfStar from "./FontAwesomeHalfStar";
 export default function Book({ book, fullStar }) {
   const { title, url, originalPrice, salePrice, rating, author } = book;
-  console.log(Number.isInteger(rating));
+  
   return (
     <div className="book">
       <div className="book__wrapper">
