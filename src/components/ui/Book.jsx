@@ -1,7 +1,8 @@
 import React from "react";
 import FontAwesomeStar from "./FontAwesomeStar";
 import FontAwesomeHalfStar from "./FontAwesomeHalfStar";
-export default function Book({ book, fullStar }) {
+export default function Book({ book }) {
+  
   const { title, url, originalPrice, salePrice, rating, author } = book;
   
   return (
