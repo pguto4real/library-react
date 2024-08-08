@@ -1,7 +1,7 @@
 import React from "react";
 import Book from "../components/ui/Book";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function Books({books}) {
     const [allBooks, setBooks] = useState(books);
 
@@ -27,7 +27,13 @@ export default function Books({books}) {
           setBooks(new_book)
         
     }
-   
+    // cl
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //       fetchUsers();
+    //     }, 2000);
+    //   }, []);
+    // filterBooks()
   return (
     <div id="books__body">
       <main className="books__main">

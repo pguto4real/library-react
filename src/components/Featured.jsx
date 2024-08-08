@@ -1,9 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Crack from "../assets/crack the coding interview.png";
-
 import { books } from "../data";
-import Book from "./ui/Book";
+import Feature from "./ui/feature";
 export default function Featured() {
     function getStar(number) {
         let star = "";
@@ -25,12 +24,7 @@ export default function Featured() {
             Featured <span className="purple">Books</span>
           </h2>
           <div className="books">
-          {books
-              .filter((book) => book.rating === 5)
-              .slice(0, 4)
-              .map((book) => (
-                <Book key={book.id} book={book}/>
-              ))}
+          <Feature books={books}/>
           </div>
         </div>
       </div>

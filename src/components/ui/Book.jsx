@@ -1,38 +1,34 @@
 import React from "react";
-import FontAwesomeStar from "./FontAwesomeStar";
-import FontAwesomeHalfStar from "./FontAwesomeHalfStar";
+
+import { Link } from "react-router-dom";
+import Rating from "./Rating";
+import PriceComponent from "./PriceComponent";
 export default function Book({ book }) {
   
-  const { title, url, originalPrice, salePrice, rating, author } = book;
+  const { id,title, url, originalPrice, salePrice, rating, author } = book;
   
   return (
     <div className="book">
-      <div className="book__wrapper">
+     <Link to={`/books/${id}`}>
+        <figure className="book__img--wrapper">
         <img className="book__img" src={url} alt="" />
-
-        <div className="book__description">
-          <div className="book__title">{title}</div>
+        </figure>
+        
+        </Link>
+        <div className="book__title">
+        <Link to={`/books/${id}`}>
+          <div className="book__title--link">{title}</div>
+          </Link>
+          </div>
           <p className="book__description--author">By : {author}</p>
           <div className="book__ratings">
-            {new Array(Math.floor(rating)).fill(0).map((_, key) => (
-              <FontAwesomeStar key={key} />
-            ))}
-            {!Number.isInteger(rating) && <FontAwesomeHalfStar />}
+            <Rating rating={rating} />
           </div>
           <div className="book__price">
-            {salePrice ? (
-              <>
-                <span className="book__price--normal">
-                  ${originalPrice.toFixed(2)}
-                </span>
-                ${salePrice.toFixed(2)}
-              </>
-            ) : (
-              <>${originalPrice.toFixed(2)}</>
-            )}
+            <PriceComponent originalPrice={originalPrice} salePrice={salePrice}/>
           </div>
-        </div>
-      </div>
+       
+     
     </div>
   );
 }
