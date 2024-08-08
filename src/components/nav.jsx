@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibraryLogo from "../assets/Library.svg";
-function Nav() {
+function Nav({cartQuantity}) {
   function openMenu() {
     document.body.classList += " menu--open";
   }
@@ -34,7 +34,7 @@ function Nav() {
             <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
-            <span className="cart__length">2</span>
+            <span className="cart__length">{cartQuantity}</span>
           </li>
         </ul>
         <div className="menu__backdrop">
