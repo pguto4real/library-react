@@ -2,7 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Crack from "../assets/crack the coding interview.png";
 import { books } from "../data";
-import Feature from "./ui/feature";
+import Feature from "./ui/Feature";
+
 export default function Featured() {
     function getStar(number) {
         let star = "";
