@@ -5,14 +5,14 @@ import { Link, useParams } from "react-router-dom";
 import PriceComponent from "../components/ui/PriceComponent";
 import Rating from "../components/ui/Rating";
 import Feature from "../components/ui/Feature";
-export default function BookInfo({ books,addToCart }) {
-
+export default function BookInfo({ books, addToCart, cartData }) {
   const { id } = useParams();
-
-    const book = books.find((book) => +book.id === +id)
-
+  const book = books.find((book) => +book.id === +id);
   const { url, title, salePrice, rating, originalPrice, author } = book;
-//   console.log(data);
+  function bookExistInCart() {
+    return cartData.find((book) => +book.id === +id);
+  }
+
   return (
     <div className="books__body">
       <main className="books__main">
@@ -23,7 +23,7 @@ export default function BookInfo({ books,addToCart }) {
                 <FontAwesomeArrowLeft></FontAwesomeArrowLeft>
               </Link>
               <Link to="/books">
-              <h2 className="book__selected--title--top">Books</h2>
+                <h2 className="book__selected--title--top">Books</h2>
               </Link>
             </div>
             <div className="book__selected">
@@ -58,7 +58,15 @@ export default function BookInfo({ books,addToCart }) {
                     ipsa architecto magnam, qui eligendi sit deleniti?
                   </p>
                 </div>
-                <button className="btn" onClick={()=>addToCart(book)}>Add to cart</button>
+                {bookExistInCart() ? (
+                  <Link to="/cart">
+                    <button className="btn">Checkout</button>
+                  </Link>
+                ) : (
+                  <button className="btn" onClick={() => addToCart(book)}>
+                    Add to cart
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -69,8 +77,7 @@ export default function BookInfo({ books,addToCart }) {
               <h2 className="book__selected--title--top">Recommended Books</h2>
             </div>
             <div className="books">
-            
-              <Feature books={books} exclude={id}/>
+              <Feature books={books} exclude={id} />
             </div>
           </div>
         </div>

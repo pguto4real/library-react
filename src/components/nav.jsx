@@ -34,7 +34,7 @@ function Nav({cartQuantity}) {
             <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
-            <span className="cart__length">{cartQuantity}</span>
+            <span className="cart__length">{ }</span>
           </li>
         </ul>
         <div className="menu__backdrop">
