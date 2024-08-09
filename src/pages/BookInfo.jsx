@@ -37,6 +37,11 @@ export default function BookInfo({ books, addToCart, cartData }) {
                 </div>
                 <div className="book__selected--price">
                   <div className="book__price">
+                    Author:{author}
+                  </div>
+                </div>
+                <div className="book__selected--price">
+                  <div className="book__price">
                     <PriceComponent
                       originalPrice={originalPrice}
                       salePrice={salePrice}

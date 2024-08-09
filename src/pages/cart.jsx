@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import CartComponent from "../components/ui/CartComponent";
+import CartComponent from "../components/ui/CartComponent.jsx";
 import EmptyCart from "../assets/empty_cart-HzaV3V1A.svg";
 import { Link } from "react-router-dom";
 export default function Cart({
@@ -47,7 +46,6 @@ export default function Cart({
                   <h2>You don't have any books in your cart!</h2>
 
                   <Link to="/books">
-            
                     <button className="btn">Browse books</button>
                   </Link>
                 </div>

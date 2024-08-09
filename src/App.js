@@ -1,11 +1,10 @@
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Nav from "./components/nav";
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Home from './pages/Home';
-import Cart from './pages/Cart';
+import Cart from './pages/Cart.jsx';
 import Books from './pages/Books';
 import BookInfo from './pages/BookInfo';
 import { books } from './data';
@@ -14,7 +13,7 @@ function App() {
   const [cartData, setCart] = useState([])
   const [cartValue, setCartValue] = useState(0)
   const [cartTotalValue, setCartTotal] = useState(0)
-  
+
   const [tax, setTax] = useState(0)
 
   const changeQuantity = (book, newQuantity) => {
@@ -42,7 +41,7 @@ function App() {
     let totalValue = 0;
     cartData.map((cart) => {
 
-      cart.salePrice
+      return cart.salePrice
         ? totalValue += (cart.salePrice * cart.quantity)
         : totalValue += (cart.originalPrice * cart.quantity)
     })
