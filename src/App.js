@@ -14,6 +14,7 @@ function App() {
   const [cartData, setCart] = useState([])
   const [cartValue, setCartValue] = useState(0)
   const [cartTotalValue, setCartTotal] = useState(0)
+  
   const [tax, setTax] = useState(0)
 
   const changeQuantity = (book, newQuantity) => {
@@ -74,7 +75,7 @@ function App() {
   useEffect(() => {
     setCart(cartData)
     cartTotal()
-    console.log(cartData.length)
+
   }, [cartData])
   return (
     <Router>

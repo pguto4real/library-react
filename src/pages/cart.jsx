@@ -42,13 +42,13 @@ export default function Cart({
                   ))}
                 </div>
               ) : (
-                <div class="cart__empty">
-                  <img src={EmptyCart} alt="" class="cart__empty--img" />
+                <div className="cart__empty">
+                  <img src={EmptyCart} alt="" className="cart__empty--img" />
                   <h2>You don't have any books in your cart!</h2>
 
                   <Link to="/books">
             
-                    <button class="btn">Browse books</button>
+                    <button className="btn">Browse books</button>
                   </Link>
                 </div>
               )}

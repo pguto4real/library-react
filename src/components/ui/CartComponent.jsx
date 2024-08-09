@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function CartComponent({ cart, changeQuantity ,removeItem,index,key}) {
+export default function CartComponent({ cart, changeQuantity ,removeItem}) {
   return (
     <div className="cart__item">
       <div className="cart__book">
